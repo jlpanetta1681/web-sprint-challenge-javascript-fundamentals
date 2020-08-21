@@ -21,7 +21,7 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
-    zooAnimals.forEach(callback(item){
+    zooAnimals.forEach(function(item){
      displayNames.push(item.animal_name);
      displayNames.push(item.scientific)
     })
@@ -35,8 +35,8 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 const lowCaseAnimalNames = zooAnimals.map(function(item){
   
-  return item.animal_name.toLowerCase;
-}
+  return item.animal_name.toLowerCase();
+});
 
 
 console.log(lowCaseAnimalNames);
@@ -45,9 +45,12 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = ZooAnimals.filter(item => {
-  return item.population < 5;
-})
+const lowPopulationAnimals = ZooAnimals.filter(function(item){
+
+     return item.population < 5;
+});
+
+
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -55,7 +58,9 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-let populationTotal = 0;
+let populationTotal = zooAnimals.reduce(function(acc,item){
+  return acc + item.population;
+}),0;
 console.log(populationTotal);
 
 
@@ -66,7 +71,8 @@ console.log(populationTotal);
   * The first two parameters can take any argument (we can pass any value as argument)
   * The last parameter accepts a callback
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
-*/
+*/const consume = function(a, b, cb)
+
 
 
 /* Step 2: Create several functions to callback with consume();
