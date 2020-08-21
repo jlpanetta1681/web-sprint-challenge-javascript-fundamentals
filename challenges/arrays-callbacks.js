@@ -60,7 +60,7 @@ The zoos need to know their total animal population across the United States. Fi
 */
 let populationTotal = zooAnimals.reduce(function(acc,item){
   return acc + item.population;
-}),0;
+}0);
 console.log(populationTotal);
 
 
@@ -93,6 +93,4 @@ console.log(populationTotal);
 /*
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
-
-*/
 
